@@ -1,0 +1,358 @@
+.erel-page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+    background: #f7f8fa;
+    min-height: 100vh;
+}
+
+.erel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.erel-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e1e2f;
+    margin: 0 0 4px;
+}
+
+.erel-header p {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.erel-btn-export {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #E53935;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.erel-btn-export:hover {
+    background: #C62828;
+}
+
+.erel-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+.erel-stat-card {
+    background: #fff;
+    border: 0.5px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.erel-stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.erel-stat-label {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.erel-stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.erel-icon-red {
+    background: #FCEBEB;
+    color: #E24B4A;
+}
+
+.erel-icon-blue {
+    background: #E6F1FB;
+    color: #378ADD;
+}
+
+.erel-icon-green {
+    background: #EAF3DE;
+    color: #639922;
+}
+
+.erel-icon-amber {
+    background: #FAEEDA;
+    color: #BA7517;
+}
+
+.erel-stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e1e2f;
+    line-height: 1;
+}
+
+.erel-stat-sub {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.erel-legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.erel-legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.erel-legenda-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.erel-dot-critico {
+    background: #E24B4A;
+}
+
+.erel-dot-baixo {
+    background: #BA7517;
+}
+
+.erel-dot-normal {
+    background: #639922;
+}
+
+.erel-card {
+    background: #fff;
+    border: 0.5px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.erel-card-header {
+    margin-bottom: 20px;
+}
+
+.erel-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e1e2f;
+}
+
+.erel-card-sub {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.erel-estoque-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.erel-estoque-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.erel-estoque-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.erel-estoque-esq {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.erel-tipo-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff5f5;
+    color: #A32D2D;
+    border: 0.5px solid #F7C1C1;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 700;
+    min-width: 44px;
+}
+
+.erel-estoque-quantidade {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e1e2f;
+}
+
+.erel-estoque-dir {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.erel-nivel-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.enivel-critico {
+    background: #FCEBEB;
+    color: #A32D2D;
+    border: 0.5px solid #F7C1C1;
+}
+
+.enivel-baixo {
+    background: #FAEEDA;
+    color: #854F0B;
+    border: 0.5px solid #FAC775;
+}
+
+.enivel-normal {
+    background: #EAF3DE;
+    color: #3F6212;
+    border: 0.5px solid #C3DDA3;
+}
+
+.erel-atualizado {
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+.erel-barra-track {
+    width: 100%;
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.erel-barra-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+.erel-barra-fill.enivel-critico {
+    background: #E24B4A;
+}
+
+.erel-barra-fill.enivel-baixo {
+    background: #BA7517;
+}
+
+.erel-barra-fill.enivel-normal {
+    background: #639922;
+}
+
+.erel-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 32px;
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+.erel-empty i {
+    font-size: 32px;
+    color: #d1d5db;
+}
+
+.erel-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 400px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.erel-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #E53935;
+    border-radius: 50%;
+    animation: erel-spin 0.8s linear infinite;
+}
+
+@keyframes erel-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.erel-erro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-height: 400px;
+    justify-content: center;
+    color: #E53935;
+    font-size: 14px;
+}
+
+.erel-erro i {
+    font-size: 40px;
+}
+
+.erel-erro button {
+    padding: 10px 24px;
+    background: #E53935;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media print {
+    .erel-btn-export {
+        display: none;
+    }
+}

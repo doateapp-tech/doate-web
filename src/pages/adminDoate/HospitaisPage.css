@@ -1,0 +1,237 @@
+.hospitais-container {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+/* HEADER */
+
+.hospitais-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #ffffff;
+    padding: 24px 28px;
+    border-radius: 18px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.hospitais-header h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.hospitais-header p {
+    margin-top: 6px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* CARD DA TABELA */
+
+.hospitais-table-wrapper {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+
+/* TABELA */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+/* HEADER TABELA */
+
+th {
+    background: #f8fafc;
+    padding: 20px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    border-bottom: 1px solid #edf2f7;
+}
+
+
+/* LINHAS */
+
+td {
+    padding: 22px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+
+/* HOVER LINHA */
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #fafafa;
+}
+
+
+/* BOTÕES */
+
+td .actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+/* EDITAR */
+
+button.edit {
+    background: #ff3b3b;
+    color: white;
+}
+
+button.edit:hover {
+    background: #e62e2e;
+    transform: translateY(-1px);
+}
+
+
+/* DESATIVAR */
+
+button.delete {
+    background: #475569;
+    color: white;
+}
+
+button.delete:hover {
+    background: #334155;
+    transform: translateY(-1px);
+}
+
+
+/* COORDENADAS */
+
+.no-coord {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 999;
+}
+
+
+/* CONTEÚDO MODAL */
+
+.modal-content {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    border-radius: 22px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    animation: modalFade 0.25s ease;
+}
+
+.modal-content h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+
+/* INPUTS */
+
+.modal-content input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.modal-content input:focus {
+    border-color: #ff3b3b;
+    box-shadow: 0 0 0 4px rgba(255, 59, 59, 0.1);
+}
+
+
+/* AÇÕES MODAL */
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+    .hospitais-container {
+        padding: 18px;
+    }
+    .hospitais-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    table {
+        min-width: 800px;
+    }
+    .hospitais-table-wrapper {
+        overflow-x: auto;
+    }
+}
+
+
+/* ANIMAÇÃO */
+
+@keyframes modalFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

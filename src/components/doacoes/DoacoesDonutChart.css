@@ -1,0 +1,55 @@
+.donut-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.donut-canvas-wrapper {
+    position: relative;
+    height: 160px;
+    width: 100%;
+}
+
+.donut-legenda {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.donut-legenda-item {
+    display: grid;
+    grid-template-columns: 10px 1fr auto auto;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.donut-legenda-cor {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.donut-legenda-tipo {
+    font-weight: 600;
+    color: #1e1e2f;
+}
+
+.donut-legenda-total {
+    color: #1e1e2f;
+    font-weight: 500;
+    text-align: right;
+}
+
+.donut-legenda-pct {
+    color: #9ca3af;
+    font-size: 11px;
+    min-width: 32px;
+    text-align: right;
+}
+
+.donut-sem-dados {
+    font-size: 12px;
+    color: #9ca3af;
+}

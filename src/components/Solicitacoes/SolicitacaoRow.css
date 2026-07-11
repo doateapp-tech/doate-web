@@ -1,0 +1,135 @@
+.sol-row {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr 1fr 1fr 1fr;
+    align-items: stretch;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s;
+    min-height: 72px;
+}
+
+.sol-row:last-child {
+    border-bottom: none;
+}
+
+.sol-row:hover {
+    background: #fafafa;
+}
+
+.sol-row>* {
+    padding: 18px 20px;
+    border-right: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+}
+
+.sol-row>*:last-child {
+    border-right: none;
+}
+
+.sol-row-doador {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sol-row-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #fff5f5;
+    color: #E53935;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #fecaca;
+}
+
+.sol-row-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sol-row-nome {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e1e2f;
+}
+
+.sol-row-email {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.sol-row-cell {
+    display: flex;
+    align-items: center;
+}
+
+.sol-row-codigo {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    font-family: monospace;
+    background: #f8fafc;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+}
+
+.sol-tipo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sol-tipo-exame {
+    background: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+}
+
+.sol-tipo-doacao {
+    background: #fff5f5;
+    color: #E53935;
+    border: 1px solid #fecaca;
+}
+
+.sol-status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sol-status-pendente {
+    background: #fefce8;
+    color: #854d0e;
+    border: 1px solid #fde68a;
+}
+
+.sol-status-concluido {
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.sol-status-expirado {
+    background: #fff5f5;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.sol-row-data {
+    font-size: 13px;
+    color: #6b7280;
+}

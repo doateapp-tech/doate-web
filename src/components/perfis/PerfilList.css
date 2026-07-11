@@ -1,0 +1,93 @@
+/* CONTAINER */
+
+.perfil-list-container {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px 0;
+    border: 1px solid #e5e7eb;
+}
+
+.perfil-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.perfil-item:last-child {
+    border-bottom: none;
+}
+
+.perfil-item:hover {
+    background: #fafafa;
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil-nome {
+    font-size: 15px;
+    font-weight: 500;
+    color: #1e1e2f;
+}
+
+.perfil-email {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.perfil-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.status.ativo {
+    background: rgba(0, 200, 100, 0.1);
+    color: #00a65a;
+}
+
+.status.pendente {
+    background: rgba(255, 180, 0, 0.15);
+    color: #d97706;
+}
+
+.btn-remove {
+    background: transparent;
+    border: 1px solid #ff3b3b;
+    color: #ff3b3b;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.btn-remove:hover {
+    background: #ff3b3b;
+    color: #ffffff;
+}
+
+.perfil-list-state {
+    padding: 20px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+}

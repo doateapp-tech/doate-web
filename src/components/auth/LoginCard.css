@@ -1,0 +1,127 @@
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.login-logo img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: -8px;
+}
+
+.login-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 14px 3px 14px 45px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.eye-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-options {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
+.login-options span {
+    color: #ff3b3b;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 30px;
+    border: none;
+    background: #ff3b3b;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 59, 59, 0.5);
+}
+
+.login-register {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-register span {
+    color: #ff3b3b;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
