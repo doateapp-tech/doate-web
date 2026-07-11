@@ -42,7 +42,7 @@ export default function INSDashboard() {
       setLoading(true);
       setErro("");
       const token = localStorage.getItem("token");
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/ins/dashboard", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/ins/dashboard`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const json = await res.json();

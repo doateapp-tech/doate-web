@@ -17,7 +17,7 @@ export default function CriarSecretarioPage() {
 
       const token = localStorage.getItem("token");
 
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/convites", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/convites`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

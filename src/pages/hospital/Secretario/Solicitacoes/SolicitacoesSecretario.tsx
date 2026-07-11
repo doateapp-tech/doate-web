@@ -31,10 +31,10 @@ const fetchSolicitacoes = async () => {
     const token = localStorage.getItem("token");
 
     const [resExames, resDoacoes] = await Promise.all([
-      fetch("${import.meta.env.VITE_API_URL}/api/exames", {
+      fetch(`${import.meta.env.VITE_API_URL}/api/exames`, {
         headers: { Authorization: `Bearer ${token}` },
       }),
-      fetch("${import.meta.env.VITE_API_URL}/api/doacoes", {
+      fetch(`${import.meta.env.VITE_API_URL}/api/doacoes`, {
         headers: { Authorization: `Bearer ${token}` },
       }),
     ]);
@@ -79,7 +79,7 @@ const totalDoacoes = solicitacoes.filter((s) => s._tipo === "DOACAO").length;
 
   <div className="sol-header-right">
     <span className="sol-data">
-      {new Date().toLocaleDateString("pt-PT", {
+      {new Date().toLocaleDateString("pt-PT`, {
         weekday: "long",
         day: "2-digit",
         month: "long",

@@ -36,7 +36,7 @@ export default function AlertasEstoque() {
       setLoading(true);
       setError("");
 
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/estoque", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/estoque`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -64,7 +64,7 @@ export default function AlertasEstoque() {
       setSendingTipo(tipo);
       setConfirmTipo(null);
 
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/alertas", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/alertas`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

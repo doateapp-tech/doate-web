@@ -46,7 +46,7 @@ export default function DefinicoesPage() {
     try {
       setLoading(true);
       const token = localStorage.getItem("token");
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/auth/perfil", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/perfil`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -70,7 +70,7 @@ export default function DefinicoesPage() {
       setSucessoPerfil("");
 
       const token = localStorage.getItem("token");
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/auth/perfil", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/perfil`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -102,7 +102,7 @@ export default function DefinicoesPage() {
       setSucessoSenha("");
 
       const token = localStorage.getItem("token");
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/auth/perfil/senha", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/perfil/senha`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

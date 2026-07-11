@@ -84,7 +84,7 @@ useEffect(() => {
       setLoading(true);
       console.log("ENVIANDO EMAIL:", email); // ← antes do fetch
 
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/convites/ativar", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/convites/ativar`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

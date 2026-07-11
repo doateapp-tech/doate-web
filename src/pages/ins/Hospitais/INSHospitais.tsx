@@ -15,7 +15,7 @@ export default function INSHospitais() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("${import.meta.env.VITE_API_URL}/api/ins/hospitais", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/ins/hospitais`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
       .then(r => r.json())

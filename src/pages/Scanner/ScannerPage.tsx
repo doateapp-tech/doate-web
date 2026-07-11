@@ -28,7 +28,7 @@ export default function ScannerPage() {
       const body = JSON.stringify({ token_qr });
 
       // Tenta primeiro como exame
-      const resExame = await fetch("${import.meta.env.VITE_API_URL}/api/exames/validar-qr", {
+      const resExame = await fetch(`${import.meta.env.VITE_API_URL}/api/exames/validar-qr`, {
         method: "POST",
         headers,
         body,
@@ -43,7 +43,7 @@ export default function ScannerPage() {
       }
 
       // Tenta como doação
-      const resDoacao = await fetch("${import.meta.env.VITE_API_URL}/api/doacoes/validar-qr", {
+      const resDoacao = await fetch(`${import.meta.env.VITE_API_URL}/api/doacoes/validar-qr`, {
         method: "POST",
         headers,
         body,

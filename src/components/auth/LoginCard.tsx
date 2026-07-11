@@ -20,7 +20,7 @@ export default function LoginCard() {
       setLoading(true);
       setError("");
 
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/auth/login", {
+           const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

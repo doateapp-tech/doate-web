@@ -37,7 +37,7 @@ export default function ResultadoModal({ solicitacao, tipo, onClose }: Props) {
 
       if (isDoacao) {
         // Confirmar doação
-        const res = await fetch("${import.meta.env.VITE_API_URL}/api/doacoes/confirmar", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/doacoes/confirmar`, {
           method: "POST",
           headers,
           body: JSON.stringify({ token_qr: solicitacao.token_qr }),
@@ -51,7 +51,7 @@ export default function ResultadoModal({ solicitacao, tipo, onClose }: Props) {
 
       } else {
         // Confirmar exame
-        const res = await fetch("${import.meta.env.VITE_API_URL}/api/exames/confirmar", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/exames/confirmar`, {
           method: "POST",
           headers,
           body: JSON.stringify({

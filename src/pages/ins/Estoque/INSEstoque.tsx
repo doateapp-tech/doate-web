@@ -21,7 +21,7 @@ export default function INSEstoque() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("${import.meta.env.VITE_API_URL}/api/ins/estoque", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/ins/estoque`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
       .then(r => r.json())

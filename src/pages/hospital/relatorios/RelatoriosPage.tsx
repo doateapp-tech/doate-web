@@ -57,7 +57,7 @@ export default function RelatoriosPage() {
 
 const fetchRelatorio = async () => {
   try {
-    const res = await fetch("${import.meta.env.VITE_API_URL}/api/doacoes/relatorio", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/doacoes/relatorio`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     const data = await res.json();
@@ -82,7 +82,6 @@ const fetchRelatorio = async () => {
     };
   }, []);
 
-  // ✅ Exportação PDF via print CSS
   const handleExportarPDF = async () => {
     setExportando(true);
     setTimeout(() => {
@@ -91,11 +90,10 @@ const fetchRelatorio = async () => {
     }, 300);
   };
 
-  // ✅ Enviar ao INS (placeholder — implementar depois)
  const handleEnviarINS = async () => {
   try {
     const token = localStorage.getItem("token");
-    const res = await fetch("${import.meta.env.VITE_API_URL}/api/relatorios/enviar", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/relatorios/enviar`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
     });

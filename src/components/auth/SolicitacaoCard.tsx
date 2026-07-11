@@ -144,7 +144,7 @@ export default function SolicitacaoCard() {
     setSuccess("");
 
     try {
-      const response = await fetch("${import.meta.env.VITE_API_URL}/api/solicitacoes", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/solicitacoes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

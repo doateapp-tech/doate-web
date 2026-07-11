@@ -52,7 +52,7 @@ export default function INSRelatoriosPage() {
       setLoading(true);
       setErro("");
       const token = localStorage.getItem("token");
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/relatorios/ins", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/relatorios/ins`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

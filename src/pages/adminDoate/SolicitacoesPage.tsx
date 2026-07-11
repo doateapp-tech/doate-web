@@ -24,7 +24,7 @@ const fetchSolicitacoes = async () => {
     setLoading(true);
     setError("");
 
-    const res = await fetch("${import.meta.env.VITE_API_URL}/api/solicitacoes", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/solicitacoes`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

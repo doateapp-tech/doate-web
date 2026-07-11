@@ -24,7 +24,7 @@ export default function GestaoEstoque() {
   const fetchEstoque = async () => {
     try {
       setLoading(true);
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/estoque", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/estoque`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -62,7 +62,7 @@ export default function GestaoEstoque() {
     try {
       setSalvando(tipo);
 
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/estoque", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/estoque`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

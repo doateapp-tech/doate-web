@@ -9,7 +9,7 @@ export default function Header() {
     const fetchHospital = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("${import.meta.env.VITE_API_URL}/api/hospitais/meu", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/hospitais/meu`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();

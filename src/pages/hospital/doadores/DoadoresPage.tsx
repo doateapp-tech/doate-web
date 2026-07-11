@@ -29,7 +29,7 @@ export default function DoadoresPage() {
 
       const token = localStorage.getItem("token");
 
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/doadores/hospital", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/doadores/hospital`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

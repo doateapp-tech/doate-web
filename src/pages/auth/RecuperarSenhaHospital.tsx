@@ -45,7 +45,7 @@ export default function RecuperarSenhaHospital() {
     try {
       setLoading(true);
       setErro("");
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/auth/recuperar-senha", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/recuperar-senha`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -75,7 +75,7 @@ export default function RecuperarSenhaHospital() {
     try {
       setLoading(true);
       setErro("");
-      const res = await fetch("${import.meta.env.VITE_API_URL}/api/auth/redefinir-senha", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/redefinir-senha`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, codigo: codigo.join(""), novaSenha }),
@@ -95,7 +95,7 @@ export default function RecuperarSenhaHospital() {
       setTempo(60);
       setCodigo(["", "", "", "", "", ""]);
       inputsRef.current[0]?.focus();
-      await fetch("${import.meta.env.VITE_API_URL}/api/auth/resend-code", {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/auth/resend-code`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

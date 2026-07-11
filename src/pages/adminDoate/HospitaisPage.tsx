@@ -11,7 +11,7 @@ export default function HospitaisPage() {
   const fetchHospitais = async () => {
     try {
       const res = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/admin/hospitais",
+        `${import.meta.env.VITE_API_URL}/api/admin/hospitais`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
