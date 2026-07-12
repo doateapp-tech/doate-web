@@ -2,184 +2,158 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function SplashPage() {
-
   const navigate = useNavigate();
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-
-    const fadeTimer = setTimeout(() => {
-      setFadeOut(true);
-    }, 3500);
-
-    const navigateTimer = setTimeout(() => {
-      navigate("/home");
-    }, 4200);
-
-    return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(navigateTimer);
-    };
-
+    const fadeTimer = setTimeout(() => setFadeOut(true), 4000);
+    const navTimer = setTimeout(() => navigate("/home"), 4700);
+    return () => { clearTimeout(fadeTimer); clearTimeout(navTimer); };
   }, [navigate]);
 
   return (
     <>
       <div className={`splash-container ${fadeOut ? "fade-out" : ""}`}>
-
-        <div className="drop-wrapper">
-
-          <svg
-            className="drop"
-            viewBox="0 0 200 240"
-          >
+        <div className="splash-inner">
+          <svg viewBox="0 0 200 260" className="drop-svg" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <mask id="drop-mask">
-
-                <rect width="100%" height="100%" fill="black" />
-
-                <path
-                  fill="white"
-                  d="
-                  M100 0
-                  C70 60 20 110 20 160
-                  C20 205 55 240 100 240
-                  C145 240 180 205 180 160
-                  C180 110 130 60 100 0
-                  Z
-                  "
-                />
-
-              </mask>
+              <clipPath id="drop-clip">
+                <path d="M100 10 C70 70 18 120 18 168 C18 216 55 252 100 252 C145 252 182 216 182 168 C182 120 130 70 100 10 Z"/>
+              </clipPath>
+              <linearGradient id="blood-shine" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%"   stopColor="#8b0000" stopOpacity="0.4"/>
+                <stop offset="40%"  stopColor="#ff3355" stopOpacity="0.15"/>
+                <stop offset="100%" stopColor="#8b0000" stopOpacity="0.3"/>
+              </linearGradient>
             </defs>
 
-            {/* sangue animado */}
-            <rect
-              className="blood"
-              x="0"
-              y="240"
-              width="200"
-              height="240"
-              mask="url(#drop-mask)"
-            />
-
-            {/* gota branca */}
+            {/* fundo da gota vazia */}
             <path
-              className="drop-shape"
-              d="
-              M100 0
-              C70 60 20 110 20 160
-              C20 205 55 240 100 240
-              C145 240 180 205 180 160
-              C180 110 130 60 100 0
-              Z
-              "
+              d="M100 10 C70 70 18 120 18 168 C18 216 55 252 100 252 C145 252 182 216 182 168 C182 120 130 70 100 10 Z"
+              fill="rgba(255,255,255,0.12)" stroke="white" strokeWidth="2.5"
             />
 
-            {/* racha da gota */}
+            {/* sangue a encher */}
+            <g clipPath="url(#drop-clip)">
+              <rect x="0" y="0" width="200" height="260" fill="#ffffffff"/>
+              <rect x="0" y="0" width="200" height="260" fill="#ffffffff">
+                <animate attributeName="y" values="260;0" dur="2.8s" begin="0.3s" fill="freeze"
+                  calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1"/>
+              </rect>
+              <rect x="0" y="0" width="200" height="260" fill="url(#blood-shine)"/>
+              {/* onda no topo do sangue */}
+              <ellipse cx="100" cy="0" rx="100" ry="18" fill="#ffffffff" opacity="0.7">
+                <animate attributeName="cy" values="260;0" dur="2.8s" begin="0.3s" fill="freeze"
+                  calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1"/>
+              </ellipse>
+            </g>
+
+            {/* contorno da gota */}
             <path
-              className="drop-crack"
-              d="M82 150 C72 170 74 200 96 215"
+              d="M100 10 C70 70 18 120 18 168 C18 216 55 252 100 252 C145 252 182 216 182 168 C182 120 130 70 100 10 Z"
+              fill="none" stroke="white" strokeWidth="2.5" opacity="0.9"
             />
 
+            {/* rachadura */}
+            <path d="M78 155 C68 178 72 208 94 222"
+              fill="none" stroke="rgba(255,200,210,0.7)" strokeWidth="3.5" strokeLinecap="round"/>
+
+            {/* brilho lateral */}
+            <ellipse cx="68" cy="130" rx="7" ry="11"
+              fill="rgba(255,255,255,0.12)" transform="rotate(-25 68 130)"/>
           </svg>
 
+       
+          
         </div>
-
       </div>
 
       <style>{`
+        .splash-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  overflow: hidden;
 
-      .splash-container{
+  background: linear-gradient(
+    180deg,
+    #ff5a6f 0%,
+    #c0152a 60%,
+    #8b0000 100%
+  );
 
-        width:100vw;
-        height:100vh;
+  transition: opacity .6s ease;
+}
 
-        display:flex;
-        align-items:center;
-        justify-content:center;
+.fade-out{
+  opacity:0;
+}
 
-        background:linear-gradient(
-          180deg,
-          #ff5a6f 0%,
-          #e5203a 50%,
-          #8b0e1c 100%
-        );
+.splash-inner{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
 
-        transition:opacity .6s ease;
+.drop-svg{
+  width:140px;
+  max-width:45vw;
+  height:auto;
+}
 
-      }
+.splash-title{
+  margin-top:20px;
+  color:rgba(255,255,255,.95);
+  font-size:26px;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-align:center;
+}
 
-      .fade-out{
-        opacity:0;
-      }
+.splash-sub{
+  margin-top:8px;
+  color:rgba(255,255,255,.65);
+  font-size:14px;
+  text-align:center;
+}
 
-      .drop-wrapper{
+@media (max-width:768px){
 
-        display:flex;
-        align-items:center;
-        justify-content:center;
+  .drop-svg{
+    width:120px;
+  }
 
-      }
+  .splash-title{
+    font-size:22px;
+  }
 
-      .drop{
+  .splash-sub{
+    font-size:13px;
+  }
 
-        width:120px;
-        height:auto;
+}
 
-      }
+@media (max-width:480px){
 
-      .drop-shape{
+  .drop-svg{
+    width:100px;
+  }
 
-        fill:white;
+  .splash-title{
+    font-size:20px;
+  }
 
-      }
+  .splash-sub{
+    font-size:12px;
+  }
 
-      .drop-crack{
-
-        fill:none;
-        stroke:#f5c8cf;
-        stroke-width:4;
-        stroke-linecap:round;
-        opacity:.9;
-
-      }
-
-      .blood{
-
-        fill:#e5203a;
-
-        animation:bloodFlow 4s ease-in-out infinite;
-
-        transform-origin:center;
-        will-change:transform;
-
-      }
-
-      @keyframes bloodFlow{
-
-        0%{
-          transform:translateY(240px);
-        }
-
-        40%{
-          transform:translateY(20px);
-        }
-
-        50%{
-          transform:translateY(0px);
-        }
-
-        60%{
-          transform:translateY(0px);
-        }
-
-        100%{
-          transform:translateY(240px);
-        }
-
-      }
-
+}
+    
       `}</style>
     </>
   );

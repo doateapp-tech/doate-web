@@ -2,12 +2,78 @@ html,
 body,
 #root {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f6fa;
+    background: #f5f6fa;
+    color: #222;
+    overflow-x: hidden;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(1400px, 100%);
+    margin: 0 auto;
+    padding-inline: 20px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding-inline: 16px;
+    }
+}
+
+@media (max-width:768px) {
+    html {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width:480px) {
+    html {
+        font-size: 14px;
+    }
 }
