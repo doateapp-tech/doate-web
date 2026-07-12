@@ -32,7 +32,7 @@ export default function Footer() {
             <li><a href="#">Solicitar acesso</a></li>
 <li id="baixar-app">
   <a
-    href="https://github.com/doateapp-tech/doate-mobile/releases/download/v1.0.0/application-b5efc36b-e046-4995-a214-3b0e38b403c7.apk"
+    href="https://github.com/doateapp-tech/doate-mobile/releases/download/v1.0.0/application-b7de365b-ae94-4889-97b9-d081bdff931d.apk"
     target="_blank"
     rel="noopener noreferrer"
     className="download-link"
