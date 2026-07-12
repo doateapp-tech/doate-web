@@ -125,3 +125,22 @@
         transform: translateY(0) scale(1);
     }
 }
+
+@media (max-width: 600px) {
+    .login-card {
+        max-width: 100%;
+        padding: 28px 20px;
+        border-radius: 16px;
+    }
+    .login-title {
+        font-size: 16px;
+    }
+    .login-input {
+        font-size: 13px;
+        padding: 12px 3px 12px 40px;
+    }
+    .login-button {
+        padding: 13px;
+        font-size: 14px;
+    }
+}

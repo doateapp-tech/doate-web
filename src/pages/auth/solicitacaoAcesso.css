@@ -30,4 +30,16 @@
     justify-content: center;
     align-items: flex-start;
     padding: 120px 20px 60px;
+    overflow-y: auto;
+}
+
+@media (max-width: 600px) {
+    .solicitacao-wrapper {
+        padding: 100px 16px 40px;
+        align-items: flex-start;
+    }
+    .solicitacao-background {
+        align-items: flex-start;
+        overflow-y: auto;
+    }
 }
