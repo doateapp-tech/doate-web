@@ -14,13 +14,12 @@ export default function HeroContent() {
       </p>
 
       <div className="hero-buttons">
-        <Link to="/informacoes" className="primary-btn">
-          Salvar Vidas
-        </Link>
-
-        <Link to="/informacoes" className="secondary-btn">
-          Saber Mais
-        </Link>
+  <Link to="/home#baixar-app" className="primary-btn">
+  Salvar Vidas
+</Link>
+<Link to="/home#informacoes" className="secondary-btn">
+  Saber Mais
+</Link>
       </div>
 
     </div>

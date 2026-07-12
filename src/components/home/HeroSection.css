@@ -25,3 +25,12 @@
     position: relative;
     z-index: 2;
 }
+
+#baixar-app .download-link {
+    color: #e5203a;
+    font-weight: 600;
+}
+
+#baixar-app .download-link:hover {
+    color: #ff3b3b;
+}
