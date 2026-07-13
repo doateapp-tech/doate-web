@@ -54,51 +54,53 @@ export default function SolicitacoesPage() {
 
   const atualizarStatus = async (s: Solicitacao, status: "aprovado" | "rejeitado") => {
     try {
-      setProcessingId(s.id);
+        setProcessingId(s.id);
 
-      const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/solicitacoes/${s.id}/status`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify({ status }),
+        const res = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/solicitacoes/${s.id}/status`,
+            {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+                body: JSON.stringify({ status }),
+            }
+        );
+
+        if (!res.ok) throw new Error();
+
+        const data = await res.json();
+
+        setSolicitacoes((prev) => prev.filter((x) => x.id !== s.id));
+
+        if (status === "aprovado") {
+            let link: string | null = null;
+
+            try {
+                setLinkLoading(true);
+                const linkRes = await fetch(
+                    `${import.meta.env.VITE_API_URL}/api/convites/link/${data.hospital_id}`,
+                    { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
+                );
+                if (linkRes.ok) {
+                    const linkData = await linkRes.json();
+                    link = linkData.link_ativacao || null;
+                }
+            } catch {
+                link = null;
+            } finally {
+                setLinkLoading(false);
+            }
+
+            setAprovacao({ nome: s.nome, link });
         }
-      );
-
-      if (!res.ok) throw new Error();
-
-      setSolicitacoes((prev) => prev.filter((x) => x.id !== s.id));
-
-      if (status === "aprovado") {
-        let link: string | null = null;
-
-        try {
-          setLinkLoading(true);
-          const linkRes = await fetch(
-            `${import.meta.env.VITE_API_URL}/api/convites/link/${s.hospital_id}`,
-            { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
-          );
-          if (linkRes.ok) {
-            const linkData = await linkRes.json();
-            link = linkData.link_ativacao || null;
-          }
-        } catch {
-          link = null;
-        } finally {
-          setLinkLoading(false);
-        }
-
-        setAprovacao({ nome: s.nome, link });
-      }
     } catch {
-      alert("Erro ao atualizar status");
+        alert("Erro ao atualizar status");
     } finally {
-      setProcessingId(null);
+        setProcessingId(null);
     }
-  };
+};
 
   const copiarLink = (link: string) => {
     navigator.clipboard.writeText(link);
