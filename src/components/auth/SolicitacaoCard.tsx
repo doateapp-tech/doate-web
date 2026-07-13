@@ -191,7 +191,7 @@ export default function SolicitacaoCard() {
         </div>
 
         <h2 className="login-title">
-          Solicitar acesso ao sistema DOATE
+          Solicitar acesso a plataforma DOATE
         </h2>
       </div>
 
