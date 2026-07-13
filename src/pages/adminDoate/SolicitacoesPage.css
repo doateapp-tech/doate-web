@@ -77,3 +77,101 @@
 .empty {
     color: #777;
 }
+
+.aprovacao-banner {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.aprovacao-banner-topo {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.aprovacao-check {
+    background: #16a34a;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.aprovacao-sub {
+    font-size: 13px;
+    color: #555;
+    margin: 4px 0 0;
+}
+
+.aprovacao-fechar {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.aprovacao-link-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    background: #fff;
+    border: 1px solid #d1fae5;
+    border-radius: 8px;
+    padding: 10px 14px;
+    flex-wrap: wrap;
+}
+
+.aprovacao-link-label {
+    font-size: 12px;
+    color: #666;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.aprovacao-link {
+    font-size: 13px;
+    color: #2563eb;
+    word-break: break-all;
+    flex: 1;
+}
+
+.aprovacao-copiar {
+    background: #e5203a;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.aprovacao-copiar:hover {
+    background: #c0152a;
+}
+
+.aprovacao-sem-link {
+    font-size: 13px;
+    color: #e5203a;
+    margin-top: 10px;
+}
+
+.loading-link {
+    font-size: 13px;
+    color: #666;
+    font-style: italic;
+}
