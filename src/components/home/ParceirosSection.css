@@ -1,79 +1,109 @@
 .parceiros-section {
-  background: #f7f7f8;
-  padding: 64px 48px;
+    background: #f7f7f8;
+    padding: 64px 48px;
 }
 
 .parceiros-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
 }
 
 .parceiros-header h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 6px 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 6px 0;
 }
 
 .destaque {
-  color: #e5203a;
+    color: #e5203a;
 }
 
 .section-tag {
-  font-size: 13px;
-  font-weight: 600;
-  color: #e5203a;
-  margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #e5203a;
+    margin-bottom: 4px;
 }
 
 .section-sub {
-  font-size: 14px;
-  color: #666;
-  margin-top: 4px;
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
 }
 
 .parceiros-grid {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .parceiro-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 1px solid #e8e8e8;
-  border-radius: 12px;
-  padding: 16px 20px;
-  background: white;
-  min-width: 180px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 16px 20px;
+    background: white;
+    min-width: 180px;
 }
 
 .parceiro-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 700;
-  flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
 }
 
 .parceiro-nome {
-  font-size: 13px;
-  font-weight: 500;
-  color: #1a1a1a;
-  line-height: 1.3;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.3;
 }
 
 .parceiros-contador {
-  margin-top: 32px;
-  text-align: center;
-  font-size: 14px;
-  color: #555;
-  font-weight: 500;
+    margin-top: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .parceiros-section {
+        padding: 48px 20px;
+    }
+    .parceiros-header {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 28px;
+    }
+    .parceiros-header h2 {
+        font-size: 22px;
+    }
+    .parceiros-grid {
+        gap: 12px;
+    }
+    .parceiro-card {
+        min-width: calc(50% - 6px);
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .parceiros-section {
+        padding: 36px 16px;
+    }
+    .parceiro-card {
+        min-width: 100%;
+    }
 }

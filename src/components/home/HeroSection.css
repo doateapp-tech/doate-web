@@ -1,6 +1,6 @@
 .hero-section {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -9,21 +9,23 @@
     background-image: url("../../assets/fundo.png");
     background-size: cover;
     background-position: center;
-    transform: scale(1);
-    transition: all 1s ease;
 }
 
 .hero-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
     z-index: 1;
 }
 
 .hero-content-wrapper {
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+    text-align: center;
 }
 
 #baixar-app .download-link {
@@ -33,4 +35,10 @@
 
 #baixar-app .download-link:hover {
     color: #ff3b3b;
+}
+
+@media (max-width: 768px) {
+    .hero-content-wrapper {
+        padding: 0 16px;
+    }
 }
