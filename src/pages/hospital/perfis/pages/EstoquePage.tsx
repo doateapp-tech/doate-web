@@ -10,36 +10,60 @@ interface Perfil {
   status?: "ativo" | "pendente";
 }
 
-export default function SecretariosPage() {
-  const [data, setData] = useState<Perfil[]>([]);
+export default function EstoquePage() {
+  const [data, setData]       = useState<Perfil[]>([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [error, setError]     = useState("");
+  const navigate              = useNavigate();
 
-  const fetchSecretarios = async () => {
+  const fetchEstoque = async () => {
     try {
       setLoading(true);
       setError("");
-      // const res = await fetch("/api/usuarios?tipo=SECRETARIO");
-      // const json = await res.json();
-      // setData(json);
-      setData([]);
+
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/hospital-staff/usuarios?tipo=ESTOQUE`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      if (!res.ok) throw new Error();
+
+      const json = await res.json();
+      setData(json);
+
     } catch {
-      setError("Erro ao carregar R.estoques.");
+      setError("Erro ao carregar responsáveis de estoque.");
     } finally {
       setLoading(false);
     }
   };
 
-  useEffect(() => { fetchSecretarios(); }, []);
+  useEffect(() => { fetchEstoque(); }, []);
 
   const handleRemove = async (id: number) => {
     try {
       setError("");
-      // await fetch(`/api/usuarios/${id}`, { method: "DELETE" });
+
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/hospital-staff/usuarios/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      if (!res.ok) throw new Error();
+
       setData((prev) => prev.filter((item) => item.id !== id));
+
     } catch {
-      setError("Erro ao remover secretário.");
+      setError("Erro ao remover responsável de estoque.");
     }
   };
 
@@ -47,8 +71,8 @@ export default function SecretariosPage() {
     <div className="page-container">
       <div className="page-header">
         <div>
-          <h1>Gerente de Estoques</h1>
-          <p>Gerencie os Responsaveis de Estoque do hospital</p>
+          <h1>Responsáveis de Estoque</h1>
+          <p>Gerencie os responsáveis de estoque do hospital</p>
         </div>
         <button
           className="btn-voltar"
@@ -64,7 +88,7 @@ export default function SecretariosPage() {
         data={data}
         loading={loading}
         onRemove={handleRemove}
-        emptyMessage="Nenhum gerente de estoque encontrado"
+        emptyMessage="Nenhum responsável de estoque encontrado"
       />
     </div>
   );

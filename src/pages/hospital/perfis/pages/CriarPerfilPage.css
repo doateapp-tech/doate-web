@@ -32,3 +32,23 @@
     background: #f8fafc;
     color: #1e293b;
 }
+
+.aprovacao-acoes {
+    margin-top: 14px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-ir-lista {
+    background: none;
+    border: none;
+    color: #16a34a;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn-ir-lista:hover {
+    text-decoration: underline;
+}

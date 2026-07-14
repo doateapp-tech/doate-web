@@ -11,19 +11,30 @@ interface Perfil {
 }
 
 export default function SecretariosPage() {
-  const [data, setData] = useState<Perfil[]>([]);
+  const [data, setData]       = useState<Perfil[]>([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [error, setError]     = useState("");
+  const navigate              = useNavigate();
 
   const fetchSecretarios = async () => {
     try {
       setLoading(true);
       setError("");
-      // const res = await fetch("/api/usuarios?tipo=SECRETARIO");
-      // const json = await res.json();
-      // setData(json);
-      setData([]);
+
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/hospital-staff/usuarios?tipo=SECRETARIO`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      if (!res.ok) throw new Error();
+
+      const json = await res.json();
+      setData(json);
+
     } catch {
       setError("Erro ao carregar secretários.");
     } finally {
@@ -36,8 +47,21 @@ export default function SecretariosPage() {
   const handleRemove = async (id: number) => {
     try {
       setError("");
-      // await fetch(`/api/usuarios/${id}`, { method: "DELETE" });
+
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/hospital-staff/usuarios/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      if (!res.ok) throw new Error();
+
       setData((prev) => prev.filter((item) => item.id !== id));
+
     } catch {
       setError("Erro ao remover secretário.");
     }

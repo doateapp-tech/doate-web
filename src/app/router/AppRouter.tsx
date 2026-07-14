@@ -38,6 +38,7 @@ import INSRelatoriosPage from "../../pages/ins/relatorios/INSRelatoriosPage";
 import DefinicoesPage from "../../pages/hospital/configuracoes/DefinicoesPage";
 import PrivateRoute from "./PrivateRoute";
 import RecuperarSenhaHospital from "../../pages/auth/RecuperarSenhaHospital";
+import AdminDashboardPage from "../../pages/hospital/dashboard/AdminDashboardPage";
 
 export default function AppRouter() {
   return (
@@ -124,7 +125,14 @@ export default function AppRouter() {
     </PrivateRoute>
   }
 />
-
+<Route
+  path="dashboard"
+  element={
+    <PrivateRoute roles={["ADMIN"]} requireHospital>
+      <AdminDashboardPage />
+    </PrivateRoute>
+  }
+/>
 
 <Route
   path="configuracoes"

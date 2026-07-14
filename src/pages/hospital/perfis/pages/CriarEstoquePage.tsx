@@ -4,9 +4,10 @@ import PerfilForm from "../../../../components/perfis/PerfilForm";
 import "./CriarPerfilPage.css";
 
 export default function CriarEstoquePage() {
-  const [creating, setCreating] = useState(false);
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [creating, setCreating]   = useState(false);
+  const [error, setError]         = useState("");
+  const [linkAtivacao, setLink]   = useState<string | null>(null);
+  const navigate                  = useNavigate();
 
   const user = JSON.parse(localStorage.getItem("user") || "null");
 
@@ -14,6 +15,7 @@ export default function CriarEstoquePage() {
     try {
       setCreating(true);
       setError("");
+      setLink(null);
 
       const token = localStorage.getItem("token");
 
@@ -34,12 +36,19 @@ export default function CriarEstoquePage() {
 
       if (!res.ok) throw new Error(responseData.message);
 
-      navigate("/hospital/perfis/estoque");
+      setLink(responseData.link || null);
+
     } catch (err: any) {
       setError(err.message || "Erro ao criar responsável de estoque.");
-      throw err;
     } finally {
       setCreating(false);
+    }
+  };
+
+  const copiarLink = () => {
+    if (linkAtivacao) {
+      navigator.clipboard.writeText(linkAtivacao);
+      alert("Link copiado!");
     }
   };
 
@@ -50,13 +59,47 @@ export default function CriarEstoquePage() {
           ← Voltar
         </button>
       </div>
+
       <div className="criar-perfil-center">
         {error && <p className="page-error">{error}</p>}
-        <PerfilForm
-          tipo="ESTOQUE"
-          onSubmit={handleCreate}
-          loading={creating}
-        />
+
+        {linkAtivacao && (
+          <div className="aprovacao-banner">
+            <div className="aprovacao-banner-topo">
+              <span className="aprovacao-check">✓</span>
+              <div className="aprovacao-info">
+                <strong>Responsável de estoque criado com sucesso!</strong>
+                <p className="aprovacao-sub">O link de activação foi enviado por email.</p>
+              </div>
+              <button className="aprovacao-fechar" onClick={() => setLink(null)}>✕</button>
+            </div>
+
+            <div className="aprovacao-link-box">
+              <span className="aprovacao-link-label">Link de activação:</span>
+              <a href={linkAtivacao} target="_blank" rel="noreferrer" className="aprovacao-link">
+                {linkAtivacao}
+              </a>
+              <button className="aprovacao-copiar" onClick={copiarLink}>Copiar</button>
+            </div>
+
+            <div className="aprovacao-acoes">
+              <button
+                className="btn-ir-lista"
+                onClick={() => navigate("/hospital/perfis/estoque")}
+              >
+                Ver lista de responsáveis →
+              </button>
+            </div>
+          </div>
+        )}
+
+        {!linkAtivacao && (
+          <PerfilForm
+            tipo="ESTOQUE"
+            onSubmit={handleCreate}
+            loading={creating}
+          />
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,285 @@
+.adm-page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+    background: #f7f8fa;
+    min-height: 100vh;
+}
+
+.adm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.adm-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #E53935;
+    margin: 0 0 4px;
+}
+
+.adm-header p {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.adm-btn-refresh {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: #fff;
+    border: 0.5px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.adm-btn-refresh:hover {
+    background: #f8fafc;
+    border-color: #d1d5db;
+}
+
+
+/* DESTAQUE */
+
+.adm-destaque {
+    background: #fff;
+    border: 0.5px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.adm-destaque-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #b45309;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.adm-destaque-body {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.adm-destaque-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.adm-destaque-nome {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e1e2f;
+}
+
+.adm-destaque-email {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.adm-destaque-stats {
+    display: flex;
+    gap: 24px;
+}
+
+.adm-destaque-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.adm-destaque-stat-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e1e2f;
+}
+
+.adm-destaque-stat-label {
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+
+/* ESTOQUE */
+
+.adm-estoque-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 8px;
+}
+
+.adm-estoque-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.adm-estoque-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.adm-estoque-esq {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.adm-estoque-qtd {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e1e2f;
+}
+
+.adm-nivel-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.adm-nivel-critico {
+    background: #FCEBEB;
+    color: #A32D2D;
+    border: 0.5px solid #F7C1C1;
+}
+
+.adm-nivel-baixo {
+    background: #FAEEDA;
+    color: #854F0B;
+    border: 0.5px solid #FAC775;
+}
+
+.adm-nivel-normal {
+    background: #EAF3DE;
+    color: #3F6212;
+    border: 0.5px solid #C3DDA3;
+}
+
+.adm-barra-track {
+    width: 100%;
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.adm-barra-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+.adm-barra-fill.adm-nivel-critico {
+    background: #E24B4A;
+}
+
+.adm-barra-fill.adm-nivel-baixo {
+    background: #BA7517;
+}
+
+.adm-barra-fill.adm-nivel-normal {
+    background: #639922;
+}
+
+
+/* EMPTY / LOADING / ERRO */
+
+.adm-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 32px;
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+.adm-empty i {
+    font-size: 32px;
+    color: #d1d5db;
+}
+
+.adm-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 400px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.adm-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #E53935;
+    border-radius: 50%;
+    animation: adm-spin 0.8s linear infinite;
+}
+
+@keyframes adm-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.adm-erro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-height: 400px;
+    justify-content: center;
+    color: #E53935;
+    font-size: 14px;
+}
+
+.adm-erro i {
+    font-size: 40px;
+}
+
+.adm-erro button {
+    padding: 10px 24px;
+    background: #E53935;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .adm-page {
+        padding: 20px 16px;
+    }
+}
