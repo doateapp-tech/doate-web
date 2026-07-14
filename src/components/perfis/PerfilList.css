@@ -1,10 +1,9 @@
-/* CONTAINER */
-
 .perfil-list-container {
     background: #ffffff;
-    border-radius: 12px;
-    padding: 10px 0;
+    border-radius: 16px;
     border: 1px solid #e5e7eb;
+    overflow: hidden;
+    margin-top: 8px;
 }
 
 .perfil-list {
@@ -16,9 +15,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 20px;
-    transition: background 0.2s ease;
-    border-bottom: 1px solid #f1f1f1;
+    padding: 18px 24px;
+    transition: background 0.15s ease;
+    border-bottom: 1px solid #f1f5f9;
 }
 
 .perfil-item:last-child {
@@ -32,11 +31,12 @@
 .perfil-info {
     display: flex;
     flex-direction: column;
+    gap: 3px;
 }
 
 .perfil-nome {
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     color: #1e1e2f;
 }
 
@@ -53,10 +53,10 @@
 
 .status {
     font-size: 12px;
-    padding: 4px 10px;
+    padding: 4px 12px;
     border-radius: 999px;
     text-transform: capitalize;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .status.ativo {
@@ -65,29 +65,31 @@
 }
 
 .status.pendente {
-    background: rgba(255, 180, 0, 0.15);
+    background: rgba(255, 180, 0, 0.12);
     color: #d97706;
 }
 
 .btn-remove {
     background: transparent;
-    border: 1px solid #ff3b3b;
-    color: #ff3b3b;
-    padding: 6px 12px;
-    border-radius: 6px;
+    border: 1px solid #fecaca;
+    color: #ef4444;
+    padding: 6px 14px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 13px;
+    font-weight: 500;
     transition: all 0.2s ease;
 }
 
 .btn-remove:hover {
-    background: #ff3b3b;
+    background: #ef4444;
+    border-color: #ef4444;
     color: #ffffff;
 }
 
 .perfil-list-state {
-    padding: 20px;
+    padding: 48px 24px;
     text-align: center;
-    color: #6b7280;
+    color: #9ca3af;
     font-size: 14px;
 }

@@ -1,41 +1,36 @@
-.perfil-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 20px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: 1px solid #e5e7eb;
-    display: flex;
-    gap: 15px;
-    align-items: flex-start;
+.perfis-container {
+    padding: 32px 36px;
+    max-width: 900px;
 }
 
-.perfil-card:hover {
-    transform: translateY(-4px);
-    border-color: #ff3b3b;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+.perfis-header {
+    margin-bottom: 32px;
 }
 
-.perfil-card-icon {
-    font-size: 22px;
+.perfis-header h1 {
+    font-size: 28px;
+    font-weight: 700;
     color: #ff3b3b;
+    margin: 0 0 8px;
 }
 
-.perfil-card-content h2 {
-    font-size: 16px;
-    color: #1e1e2f;
-    margin-bottom: 6px;
-}
-
-.perfil-card-content p {
-    font-size: 13px;
+.perfis-header p {
+    font-size: 14px;
     color: #6b7280;
+    margin: 0;
 }
 
-.perfis-container h1 {
+.perfis-grid {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    color: #ff3b3b;
-    font-size: 35px;
+    gap: 16px;
+}
+
+@media (max-width: 640px) {
+    .perfis-container {
+        padding: 20px 16px;
+    }
+    .perfis-header h1 {
+        font-size: 22px;
+    }
 }

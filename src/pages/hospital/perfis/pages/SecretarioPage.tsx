@@ -22,7 +22,7 @@ export default function SecretariosPage() {
       setError("");
 
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/hospital-staff/usuarios?tipo=SECRETARIO`,
+`${import.meta.env.VITE_API_URL}/api/hospital/usuarios?tipo=SECRETARIO`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -49,7 +49,7 @@ export default function SecretariosPage() {
       setError("");
 
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/hospital-staff/usuarios/${id}`,
+     `${import.meta.env.VITE_API_URL}/api/hospital/usuarios/${id}`,
         {
           method: "DELETE",
           headers: {

@@ -1,93 +1,106 @@
 .perfil-card {
     background: #ffffff;
-    border: 0.5px solid #e5e7eb;
-    border-radius: 12px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
     overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.perfil-card:hover {
+    border-color: #ff3b3b;
+    box-shadow: 0 8px 24px rgba(255, 59, 59, 0.08);
 }
 
 .perfil-card-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 1rem 1.25rem;
-    border-bottom: 0.5px solid #e5e7eb;
+    gap: 14px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #f1f5f9;
 }
 
 .perfil-card-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: #fef2f2;
-    color: #e24b4a;
-    font-size: 18px;
+    width: 44px;
+    height: 44px;
+    background: #fff1f1;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 20px;
+    color: #ff3b3b;
     flex-shrink: 0;
 }
 
 .perfil-card-header h2 {
     font-size: 15px;
-    font-weight: 500;
-    color: #1e293b;
-    margin: 0;
+    font-weight: 600;
+    color: #1e1e2f;
+    margin: 0 0 4px;
 }
 
 .perfil-card-header p {
     font-size: 13px;
-    color: #64748b;
-    margin: 2px 0 0;
+    color: #6b7280;
+    margin: 0;
 }
 
 .perfil-card-acoes {
-    display: grid;
-    grid-template-columns: 1fr 0.5px 1fr;
-}
-
-.perfil-acao-divider {
-    background: #e5e7eb;
+    display: flex;
+    flex-direction: column;
 }
 
 .perfil-acao {
-    all: unset;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.85rem 1.25rem;
+    padding: 16px 24px;
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: background 0.15s ease;
+    width: 100%;
+    text-align: left;
 }
 
 .perfil-acao:hover {
-    background: #f8fafc;
+    background: #fafafa;
 }
 
 .perfil-acao-left {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .perfil-acao-icon {
-    font-size: 16px;
-    color: #64748b;
+    font-size: 18px;
+    color: #9ca3af;
+    width: 20px;
+    text-align: center;
 }
 
 .perfil-acao-label {
     display: block;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
-    color: #1e293b;
+    color: #1e1e2f;
 }
 
 .perfil-acao-sublabel {
     display: block;
     font-size: 12px;
-    color: #94a3b8;
-    margin-top: 1px;
+    color: #9ca3af;
+    margin-top: 2px;
 }
 
 .perfil-acao-arrow {
-    font-size: 14px;
-    color: #cbd5e1;
+    font-size: 16px;
+    color: #d1d5db;
+}
+
+.perfil-acao-divider {
+    height: 1px;
+    background: #f1f5f9;
+    margin: 0 24px;
 }
