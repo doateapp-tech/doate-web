@@ -1,66 +1,151 @@
 .ins-estoque {
-    padding: 2rem;
+    padding: 40px;
     max-width: 1200px;
+}
+
+.ins-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.ins-page-header h1 {
+    font-size: 26px;
+    color: #ff3b3b;
+    margin: 0 0 6px;
+}
+
+.ins-page-header p {
+    color: #64748b;
+    font-size: 14px;
+    margin: 0;
+}
+
+.ins-btn-refresh {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+}
+
+.ins-btn-refresh:hover {
+    background: #f3f4f6;
+}
+
+.ins-erro {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.ins-loading {
+    color: #64748b;
+    margin-top: 20px;
+    font-size: 14px;
 }
 
 .ins-estoque-table {
     background: #fff;
     border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
     overflow: hidden;
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
 }
 
 .ins-estoque-header,
 .ins-estoque-row {
     display: grid;
-    grid-template-columns: 2fr repeat(8, 1fr);
-    padding: 0.85rem 1.25rem;
+    grid-template-columns: 200px repeat(8, 1fr);
+    padding: 14px 20px;
     align-items: center;
+    gap: 0;
 }
 
 .ins-estoque-header {
-    background: #f5f5f5;
-    font-size: 0.78rem;
+    background: #f8fafc;
+    font-size: 11px;
     font-weight: 600;
     color: #ff3b3b;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .ins-estoque-row {
-    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid #f1f5f9;
     transition: background 0.15s;
-}
-
-.ins-estoque-row:last-child {
-    border-bottom: none;
 }
 
 .ins-estoque-row:hover {
     background: #fafafa;
 }
 
-.ins-qtd {
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-align: center;
+.ins-hospital-nome {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e1e2f;
 }
 
 .ins-qtd.critico {
-    color: #c0392b;
+    background: #fef2f2;
+    color: #dc2626;
 }
 
 .ins-qtd.baixo {
+    background: #fff7ed;
     color: #d97706;
 }
 
 .ins-qtd.normal {
+    background: #ecfdf5;
     color: #16a34a;
 }
 
 .ins-legenda {
     display: flex;
-    gap: 1.5rem;
-    font-size: 0.85rem;
-    color: #555;
+    gap: 24px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.ins-hospital-nome {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e1e2f;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 900px) {
+    .ins-estoque {
+        padding: 20px 16px;
+    }
+    .ins-page-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .ins-estoque-header,
+    .ins-estoque-row {
+        grid-template-columns: 1.5fr repeat(8, 1fr);
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+    .ins-legenda {
+        flex-direction: column;
+        gap: 8px;
+    }
 }

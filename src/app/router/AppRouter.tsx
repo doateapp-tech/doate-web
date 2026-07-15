@@ -39,6 +39,7 @@ import DefinicoesPage from "../../pages/hospital/configuracoes/DefinicoesPage";
 import PrivateRoute from "./PrivateRoute";
 import RecuperarSenhaHospital from "../../pages/auth/RecuperarSenhaHospital";
 import AdminDashboardPage from "../../pages/hospital/dashboard/AdminDashboardPage";
+import INSEstoqueProprio from "../../pages/ins/Estoque/INSEstoqueProprio";
 
 export default function AppRouter() {
   return (
@@ -162,7 +163,9 @@ export default function AppRouter() {
   <Route path="hospitais" element={<INSHospitais />} />
   <Route path="estoque" element={<INSEstoque />} />
   <Route path="relatorios" element={<INSRelatoriosPage />} />
+  <Route path="/ins/estoque-ins" element={<INSEstoqueProprio />} />
   <Route path="configuracoes" element={<DefinicoesPage />} />
+  
 </Route>
       
 

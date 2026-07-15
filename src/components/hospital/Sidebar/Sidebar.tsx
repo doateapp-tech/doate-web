@@ -65,12 +65,13 @@ ESTOQUE: [
   { to: "/hospital/estoque/relatorios",  icon: <FaFileMedical />,         label: "Relatórios" },
 ],
 
-  INS_ADMIN: [
-  { to: "/ins/dashboard",     icon: <FaChartBar />,  label: "Estatísticas" },
-  { to: "/ins/hospitais",     icon: <FaHospital />,  label: "Hospitais" },
-  { to: "/ins/estoque",       icon: <FaTint />,       label: "Estoque" },
-  { to: "/ins/relatorios",    icon: <FaFileAlt />,    label: "Relatórios" },
-  { to: "/hospital/perfis",   icon: <FaUsers />,      label: "Colaboradores" }, 
+INS_ADMIN: [
+  { to: "/ins/dashboard",      icon: <FaChartBar />,  label: "Estatísticas" },
+  { to: "/ins/hospitais",      icon: <FaHospital />,  label: "Hospitais" },
+  { to: "/ins/estoque",        icon: <FaTint />,      label: "Monitorização Nacional" },
+  { to: "/ins/estoque-ins",    icon: <FaBoxes />,     label: "Estoque" },
+  { to: "/ins/relatorios",     icon: <FaFileAlt />,   label: "Relatórios" },
+  { to: "/hospital/perfis",    icon: <FaUsers />,     label: "Colaboradores" },
 ],
   };
 
